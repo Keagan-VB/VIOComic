@@ -1,0 +1,156 @@
+@font-face {
+    font-family: Fonzy;
+    src: url(FonzyDemo.ttf);
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(60, 40, 42);
+    font-family: Fonzy, Arial;
+    font-size: 2em;
+}
+
+.comic-container {
+    position: relative; /* Ensures child elements can be absolutely positioned */
+    width: 80%;
+    margin: 0 auto;
+}
+
+#comicPage {
+    display: block;
+    width: 100%;
+}
+
+#dialogue-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #555;
+}
+
+.nav-link:active {
+    color: #000;
+}
+
+.disabled {
+    color: #aaa;
+    pointer-events: none;
+    cursor: default;
+}
+
+#dialogue-animation {
+    opacity: 0;
+    pointer-events: none; /* Initially hidden */
+}
+
+#text-overlay {
+    position: absolute;
+    top: 50%; /* Position text in the right place */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#animation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); /* Darkened background */
+    z-index: 9999; /* Ensures it stays on top */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper for centering the animation */
+.animation-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animation GIF styling */
+#scene-animation {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Invisible button to trigger the animation */
+.invisible-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 25%;
+    background-color: rgba(255, 0, 0, 0); /* Add temporary red color for visibility during testing */
+    z-index: 1000; /* Ensure it stays on top */
+    cursor: pointer;
+    border: none;
+}
+
+#panel1-button {
+    top: 70%; /* Adjust to place correctly over panel 1 */
+    left: 5%;
+    width: 30%; /* Adjust based on size required */
+    height: 15%;
+}
+
+/* Button 2 positioning */
+#panel2-button {
+    top: 82%; /* Adjust to place correctly over panel 2 */
+    left: 50%;
+    width: 40%; /* Adjust based on size required */
+    height: 10%;
+}

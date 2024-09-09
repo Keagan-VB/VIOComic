@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Comic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen">
+        <button id="start-button">Start Comic</button>
+    </div>
+
+    <div class="comic-container">
+        <img id="comicPage" src="animated pages/page1_1.png" alt="Comic Background">
+        <img id="dialogue-animation" src="" alt="Dialogue Animation">
+        <audio id="voice-over" src="audio/inner_1.mp3" preload="auto"></audio>
+
+        <button id="panel1-button" class="invisible-button"></button>
+        <button id="panel2-button" class="invisible-button"></button>
+    </div>
+    <div class="navigation">
+        <a href="#" id="prev" class="disabled">Prev</a>
+        <a href="#" id="top" class="nav-link">TOP</a>
+        <a href="page2/index.html" id="next" class="nav-link">Next</a>
+    </div>
+
+    <div id="animation-overlay">
+        <div class="animation-wrapper">
+            <img id="scene-animation" src="" alt="Scene Animation">
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
